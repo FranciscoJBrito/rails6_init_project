@@ -1,24 +1,32 @@
-# README
+# Rails 6 con postgresql
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Para correr el proyecto, debemos agregar dos archivos adicionales.
+El primero es `.env` y el segundo `.env.postgresql`
 
-Things you may want to cover:
+Las variables de entorno para agregar en `.env` son:
 
-* Ruby version
+```
+DB_USER=postgres
+DB_PASSWORD=123456
+DB_HOST=db
+```
 
-* System dependencies
+Y las variables para el archivo `.env.postgresql` son:
 
-* Configuration
+```
+POSTGRES_PASSWORD=123456
+POSTGRES_USER=postgres
+```
 
-* Database creation
+Luego de agregar estas variables, debemos construir los containers con docker compose, con los siguientes comandos
 
-* Database initialization
+```
+#Para construir los containers
+docker-compose build
 
-* How to run the test suite
+#Para levantar los containers
+docker-compose up
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#Para dejar los containers corriendo en segundo plano
+docker-compose up -d
+```
